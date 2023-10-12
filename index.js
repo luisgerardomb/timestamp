@@ -32,6 +32,8 @@ app.get("/api", (req, res) => {
 
   jsonData = {unix: today.valueOf(), utc: today.toUTCString()};
 
+  console.log('/api', jsonData);
+
   res.json(jsonData);
 });
 
@@ -50,6 +52,8 @@ app.get("/api/:date", (req, res) => {
       jsonData = {unix: date.valueOf(), utc: date.toUTCString()};
     }
   }
+
+  console.log('/api/' + req.params.date, jsonData);
 
   res.json(jsonData)
 });
