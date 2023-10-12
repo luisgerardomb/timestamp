@@ -42,7 +42,7 @@ app.get("/api/:date", (req, res) => {
 
   if(/\d{5,}/.test(req.params.date)) {
     let intDate = parseInt(req.params.date)
-    jsonData = {unix: req.params.date, utc: new Date(intDate).toUTCString()};
+    jsonData = {unix: intDate, utc: new Date(intDate).toUTCString()};
   } else {
     let date = new Date(req.params.date)
 
